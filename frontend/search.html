@@ -37,7 +37,7 @@
           text-align: center;
           vertical-align: middle;
           line-height: 40px; 
-          padding: 10px;
+          padding: 15px;
         }
         
         /* Style the content */
@@ -52,7 +52,7 @@
         
         textarea {
           
-          width: 80%;
+          width: 85%;
           padding: 12px 20px;
           margin: 8px 0;
           display: inline-block;
@@ -104,13 +104,40 @@
             padding-top: 18px;
         }
         
+        @media screen and (max-width: 800px) {
+            input[type=submit] {
+                width: 30%;
+            }
+            .results {
+                margin-top: 30px;
+                text-align: center;
+                margin: 40px 0;
+            }
+            .results h2 {
+                float: center;
+                display: block;
+                color: #0a1d7c;
+                text-align: center;
+                line-height: 20px; 
+                padding: 10px ;
+                margin: 10px 0px;
+            }
+
+            .navbar-brand {
+                /* border: 1px solid red; */
+                padding: 0 0 0 20px;
+              }
+              .navbar-toggler {
+                margin-right: 5px;
+              }
+        }
         </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-search-nav">
         <div class="container"><a class="navbar-brand" href="index.html">SQLi_XSS</a>
-            <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
-                    class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+            <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse">
+                <span style="background-color: #0a1d7c;" class="bar1"></span> <span style="background-color: #0a1d7c;" class="bar2"></span> <span style="background-color: #0a1d7c;" class="bar3"></span></button>
             <div id="my-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -120,8 +147,8 @@
                     <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 logged-out-form">
-                    <a href="login.html" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase" style="color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">login</a> 
-                    <a href="signup.html" class="btn btn-info my-2 my-sm-0 text-uppercase"  style="color: #fff; background-color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">signup</a>
+                    <a href="login.html" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase" style="color: #0a1d7c; border-color: #0a1d7c;">login</a> 
+                    <a href="signup.html" class="btn btn-info my-2 my-sm-0 text-uppercase"  style="color: #fff; background-color: #0a1d7c; border-color: #0a1d7c;">signup</a>
                 </form>
                 <form class="form-inline my-2 my-lg-0 logged-in-form">
                     <div style="display: flex;">    
@@ -147,7 +174,7 @@
             </form>
             <div class="results">
                 <h2>Result</h2>
-                <h3>The provided query is not a malicious SQL injection Payload</h3>
+                <h3>The provided query is not a malicious attack Payload</h3>
             </div>
         </div>
     </div>
