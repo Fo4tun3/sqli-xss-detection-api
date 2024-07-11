@@ -95,3 +95,17 @@ form .input-field {
 .button input:hover {
   background-color: #0e4bf1;
 }
+
+@media screen and (max-width: 700px) {
+  .wrapper{
+      width: 300px;
+  }
+
+  .navbar-brand {
+      /* border: 1px solid red; */
+      padding: 0 0 0 20px;
+    }
+    .navbar-toggler {
+      margin-right: 5px;
+    }
+}
