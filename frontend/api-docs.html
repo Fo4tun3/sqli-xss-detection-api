@@ -1,0 +1,341 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="images/favilogo.png" rel="icon">
+    <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style copy.css">
+    
+    <link rel="stylesheet" href="passcss/api.css">
+
+    <title>SQLi_XSS Detect</title>
+    <style>
+        .imgsize {
+            height: 60px;
+        }
+        .api-docs {
+            color: #1d3ede;
+        }
+        .userMessage {
+            padding: 0 10px;
+            margin-right: 30px;
+        }
+        .userMessage > p {
+            margin-top: 10px;
+        }
+        #username {
+            font-weight: bold;
+            display: flex;
+        }
+        .logout {
+            /* border: 1px solid red; */
+            padding-top: 18px;
+        }
+        
+  
+    </style>
+</head>
+<body style="background-color: white;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-search-nav">
+    <div class="container"><a class="navbar-brand" href="index.html">SQLi_XSS</a>
+        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#services">About</a></li>
+                <li class="nav-item"><a class="nav-link api-docs" href="#" style="color: #007bff;">API Docs</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 logged-out-form">
+                <a href="login.html" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">login</a> 
+                <a href="signup.html" class="btn btn-info my-2 my-sm-0 text-uppercase" style="color: #fff;">signup</a>
+            </form>
+
+            <form class="form-inline my-2 my-lg-0 logged-in-form" >
+                <div style="display: flex;">
+                    <div class="userMessage">
+                        <p>Hello <br> 
+                        <span id="username">fortune</span></p>
+                    </div>
+                    <div class="logout">
+                        <a id="logout" class="btn btn-info my-2 my-sm-0 text-uppercase" style="color: #fff; background-color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">Logout</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<header>
+    <h1>API Documentation for ML-based SQLi and XSS Detection</h1>
+    <nav class="innernav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="home">
+        <h2>Welcome</h2>
+        <p>This API helps in detecting SQLi and XSS vulnerabilities using machine learning.</p>
+    </section>
+    <section id="getting-started">
+        <h2>Getting Started</h2>
+        <p>To start using the API, follow these steps...</p>
+    </section>
+    <section id="endpoints">
+        <h2>Endpoints</h2>
+        <h4>/detect-sqli</h4>
+        <p>Detects SQLi vulnerabilities.</p>
+        <pre><code>
+{
+"method": "POST",
+"endpoint": "/detect-sqli-xss",
+"body": {
+"query": "SELECT * FROM users WHERE id = 1"
+}
+}
+        </code></pre>
+        <!-- <h4>/detect-xss</h4>
+        <p>Detects XSS vulnerabilities.</p>
+        <pre><code>
+{
+"method": "POST",
+"endpoint": "/detect-xss",
+"body": {
+"input": "<s>('xss')</s>"
+}
+}
+        </code></pre> -->
+    </section>
+    <section id="examples">
+        <h2>Examples</h2>
+        <p>Here are some examples of how to use the API...</p>
+    </section>
+    <section id="faq">
+        <h2>FAQ</h2>
+        <p>Frequently asked questions about the API...</p>
+        <p style="font-weight: bold;">Q1: What is the purpose of this API?</p>
+        <p>A1: This API is designed to detect SQL injection (SQLi) and Cross-Site Scripting (XSS) vulnerabilities in web applications using machine learning algorithms. It helps developers secure their applications by identifying and mitigating these common security threats.</p>
+            <br>
+            <br>
+        <p style="font-weight: bold;">Q2: How do I get started with the API?</p>
+        <p>A2: To get started, you need to sign up for an API key, which you can obtain from our website. Once you have the API key, you can integrate the API into your web application by following the instructions provided in the "Getting Started" section.</p>
+        <br>
+        <br>
+            <p style="font-weight: bold;">Q3: What are the main endpoints of this API?</p>
+            <p>A3: The main endpoints of this API are:</p>
+            <p>/detect-sqli-xss: Detects SQL injection vulnerabilities.</p>
+            <br>
+            <br>
+
+            <p style="font-weight: bold;">Q4: How do I use the /detect-sqli endpoint?</p>
+            <p>A4: To use the /detect-sqli endpoint, send a POST request with the following JSON payload:</p>
+            <pre><code>
+{
+"method": "POST",
+"endpoint": "/detect-sqli",
+"body": {
+    "query": "SELECT * FROM users WHERE id = 1"
+}
+}
+            </code></pre>
+            <p>The response will indicate whether the provided Payload is vulnerable to SQL injection or XSS attack.</p>
+            <br>
+            <br>
+
+            <p style="font-weight: bold;">Q6: How accurate is the API in detecting vulnerabilities?</p>
+            <p>A6: Our machine learning models are trained on a large dataset of known vulnerabilities and are continuously updated to improve accuracy. However, we recommend using this API as part of a comprehensive security strategy.</p>
+            <br>
+            <br>
+            <p style="font-weight: bold;">Q7: Is there a limit to the number of requests I can make?</p>
+            <p>A7: Yes, there are rate limits in place to ensure fair usage. Please refer to our pricing page for details on request limits for different subscription plans.</p>
+            <br>
+            <br>
+            <p style="font-weight: bold;">Q8: Can I use this API in a production environment?</p>
+            <p>A8: Yes, this API is designed for both development and production environments. However, we recommend thorough testing in a staging environment before deploying to production.</p>
+            <br>
+            <br>
+            <p style="font-weight: bold;">Q9: What kind of support is available if I encounter issues?</p>
+            <p>A9: We offer technical support via email and a community forum where you can ask questions and share experiences with other developers. For urgent issues, you can contact our support team directly.</p>
+            <br>
+            <br>
+            <p style="font-weight: bold;">Q10: How do I report a bug or suggest a feature?</p>
+            <p>A10: To report a bug or suggest a feature, please visit our GitHub repository and open an issue. We appreciate your feedback and contributions to improve the API.</p>
+            <br>
+            <br>
+            <p>If you have any other questions not covered here, feel free to contact us at <a href="mailto:fortify4114@gmail.com" style="font-weight: bold;">fortify4114@gmail.com</a>.</p></p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>For support or inquiries, contact us at <a href="mailto:fortify4114@gmail.com" style="font-weight: bold;">fortify4114@gmail.com</a>.</p>
+    </section>
+</main>
+
+
+
+
+<div class="container-fluid gtco-features-list">
+    <div class="container">
+        <div class="row">
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/quality-results.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">Accurate Results</h5>
+                    Our website utilizes advanced machine learning algorithms to ensure 
+                    high accuracy in detecting SQL Injection and XSS vulnerabilities. 
+                    Rigorous testing has validated our tool's reliability and precision 
+                    in identifying potential threats.
+                </div>
+            </div>
+            <!-- <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/analytics.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">Analytics</h5>
+                    Aliquam a nisl pulvinar, hendrerit arcu sed, dapibus velit. Duis ac quam id sapien vestibulum
+                    fermentum ac eu eros. Aliquam erat volutpat.
+                </div>
+            </div> -->
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/affordable-pricing.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">API Documentation</h5>
+                    Comprehensive API documentation is provided to guide users 
+                    through integration, offering clear instructions 
+                    for seamless implementation. The documentation ensures 
+                    developers can quickly and efficiently utilize the API to 
+                    enhance their web security.
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/easy-to-use.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">Easy To Use</h5>
+                    Our user-friendly interface makes SQLi and XSS detection straightforward, requiring 
+                    minimal technical expertise. The intuitive design allows users to 
+                    quickly scan and secure their websites with just a few clicks.
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/free-support.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">Free Support</h5>
+                    We offer free support to assist users with any issues or questions, ensuring a 
+                    smooth experience. Our dedicated support team is available to 
+                    provide prompt and helpful assistance.
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="images/effectively-increase.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">User Feedback</h5>
+                    We value user feedback to continually improve our service and 
+                    features. User suggestions and comments are instrumental in 
+                    refining our tool to better meet the needs of our community.
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid gtco-logo-area" style="padding: 30px 0;">
+    <div class="container">
+        <div class="row" style="padding: 0px 100px;">
+            <div class="col"><img src="images/clients/vscode.jpeg" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/matplotlib.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/numpy.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/pandas.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/sklearn.png" class="img-fluid" alt=""></div>
+            <!-- <div class="col"><img src="images/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/clients/client-8.png" class="img-fluid" alt=""></div> -->
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="container-fluid" id="gtco-footer">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-lg-6" id="contact">
+                <h4> Contact Us </h4>
+                <input type="text" class="form-control" placeholder="Full Name">
+                <input type="email" class="form-control" placeholder="Email Address">
+                <textarea class="form-control" placeholder="Message"></textarea>
+                <a href="" class="submit-button" style="width: 170px; text-align: center; padding: 5px 15px;">SEND <i class="" aria-hidden="true"></i></a>
+            </div> -->
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>SQLi_XSS</h4>
+                        <ul class="nav flex-column company-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html/#services">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="api-docs.html">API Documentation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html/#contact">Contact</a></li>
+                        </ul>
+                        <h4 class="mt-5">Follow Us</h4>
+                        <ul class="nav follow-us-nav">
+                            <li class="nav-item"><a class="nav-link pl-0" href="#"><i class="fa fa-facebook"
+                                                                                      aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"
+                                                                                 aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="fortify4114@gmail.com"><i class="fa fa-google"
+                                                                                 aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/fortune-ifeanyi"><i class="fa fa-linkedin"
+                                                                                 aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="col-6">
+                        <h4>Services</h4>
+                        <ul class="nav flex-column services-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Web Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Graphics Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">App Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">SEO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Marketing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Analytic</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-12">
+                        <p>&copy; 2024. All Rights Reserved. Design by <a href="https://www.linkedin.com/in/fortune-ifeanyi" target="_blank">Ifeanyi Fortune</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js-->
+<script src="owl-carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="myjs/func.js"></script>
+</body>
+</html>

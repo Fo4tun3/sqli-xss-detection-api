@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="images/favilogo.png" rel="icon">
+    <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style copy.css">
+
+
+    <title>SQLi_XSS Detect</title>
+    <style>
+
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /* Style the top navigation bar */
+        h2 {
+        
+          float: center;
+          display: block;
+          background-color: #0a1d7c;
+          color: #f2f2f2;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 40px; 
+          padding: 10px;
+        }
+        
+        /* Style the content */
+        
+        
+        .review {
+          background-color: #ddd;
+          padding: 0 10px 80px 10px;
+          text-align: center;
+          margin:auto
+        }
+        
+        textarea {
+          
+          width: 80%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 20%;
+          background-color: #0a1d7c;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          align:center;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .results > h2 {
+            float: center;
+            display: block;
+            background-color: #ddd;
+            color: #0a1d7c;
+            text-align: center;
+            line-height: 20px; 
+            padding: 10px ;
+            margin: 10px 500px;
+        }
+        .userMessage {
+            padding: 0 10px;
+            margin-right: 30px;
+        }
+        .userMessage > p {
+            margin-top: 10px;
+        }
+        #username {
+            font-weight: bold;
+        }
+        .logout {
+            /* border: 1px solid red; */
+            padding-top: 18px;
+        }
+        
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-search-nav">
+        <div class="container"><a class="navbar-brand" href="index.html">SQLi_XSS</a>
+            <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                    class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html" style="color: #007bff;">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api-docs.html">API Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 logged-out-form">
+                    <a href="login.html" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase" style="color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">login</a> 
+                    <a href="signup.html" class="btn btn-info my-2 my-sm-0 text-uppercase"  style="color: #fff; background-color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">signup</a>
+                </form>
+                <form class="form-inline my-2 my-lg-0 logged-in-form">
+                    <div style="display: flex;">    
+                        <div class="userMessage">
+                            <p>Hello <br> 
+                            <span id="username">fortune</span></p>
+                        </div>
+                        <div class="logout">
+                            <a id="logout" class="btn btn-info my-2 my-sm-0 text-uppercase" style="color: #fff; background-color: #0a1d7c; border-color: #0a1d7c;" type="submit" onclick="logout();">Logout</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class = "review">
+        <h2>SQL INJECTION AND CROSS-SITE SCRIPTING DETECTION USING MACHINE LEARNING</h2>
+        <form action="/predict" method="POST" target="_blank">
+           <textarea name="query" placeholder="Enter your query here..." rows="7" cols="15"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+            <div class="results">
+                <h2>Result</h2>
+                <h3>The provided query is not a malicious SQL injection Payload</h3>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid" id="gtco-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" id="contact">
+                    <h4> Contact Us </h4>
+                    <input type="text" class="form-control" placeholder="Full Name">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                    <textarea class="form-control" placeholder="Message"></textarea>
+                    <!-- <a href="" class="submit-button">SEND <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
+                    <a href="" class="submit-button" style="width: 170px; text-align: center; padding: 5px 15px;">SEND <i class="" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>SQLi_XSS</h4>
+                            <ul class="nav flex-column company-nav">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#services">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="api-docs.html">API Documentation</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                            </ul>
+                            <h4 class="mt-5">Follow Us</h4>
+                            <ul class="nav follow-us-nav">
+                                <li class="nav-item"><a class="nav-link pl-0" href="#"><i class="fa fa-facebook"
+                                                                                          aria-hidden="true"></i></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"
+                                                                                     aria-hidden="true"></i></a></li>
+                                <li class="nav-item"><a class="nav-link" href="fortify4114@gmail.com"><i class="fa fa-google"
+                                                                                     aria-hidden="true"></i></a></li>
+                                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/fortune-ifeanyi"><i class="fa fa-linkedin"
+                                                                                     aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-6">
+                            <h4>Services</h4>
+                            <ul class="nav flex-column services-nav">
+                                <li class="nav-item"><a class="nav-link" href="#">Web Design</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Graphics Design</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">App Design</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">SEO</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Marketing</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Analytic</a></li>
+                            </ul>
+                        </div> -->
+                        <div class="col-12">
+                            <p>&copy; 2024. All Rights Reserved. Design by <a href="https://www.linkedin.com/in/fortune-ifeanyi" target="_blank">Ifeanyi Fortune</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl carousel js-->
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+<script src="myjs/func.js"></script>
+
+</body>
+</html>

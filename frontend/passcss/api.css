@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Lato-Regular";
+    src: url(../fonts/Lato-Regular.ttf);
+  }
+  @font-face {
+    font-family: "Lato-Black";
+    src: url(../fonts/Lato-Black.ttf);
+  }
+  @font-face {
+    font-family: "Lato-Bold";
+    src: url(../fonts/Lato-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Lato-Light";
+    src: url(../fonts/Lato-Light.ttf);
+  }
+  @font-face {
+    font-family: "Lato-Medium";
+    src: url(../fonts/Lato-Medium.ttf);
+  }
+  @font-face {
+    font-family: "Lato-Semibold";
+    src: url(../fonts/Lato-Semibold.ttf);
+  }
+  @font-face {
+    font-family: "OpenSans-Bold";
+    src: url(../fonts/OpenSans-Bold.ttf);
+  }
+  @font-face {
+    font-family: "OpenSans-Regular";
+    src: url(../fonts/OpenSans-Regular.ttf);
+  }
+  @font-face {
+    font-family: "OpenSans-Semibold";
+    src: url(../fonts/OpenSans-Semibold.ttf);
+  }
+  p {
+    font-family: "OpenSans-Regular";
+    color: #666666;
+    font-size: 18px;
+  }
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow: hidden;
+    overflow-y: auto;
+    font-family: "OpenSans-Regular";
+  }
+
+
+header {
+    background: #0a1d7c;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+
+
+.innernav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.innernav ul li {
+    display: inline;
+    padding: 5px;
+    margin: 1em 1em;
+}
+
+.innernav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.innernav ul li a:hover {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2.5em;
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 410px) {
+  header h1 {
+    font-size: 150%;
+  }
+  
+}

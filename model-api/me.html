@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortunne Ifeanyi - Personal Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        header {
+            background-color: skyblue;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        h2 {
+            border-bottom: 3px solid skyblue;
+            padding-bottom: 0.5rem;
+            font-size: 1.75rem;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .project-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .project-card h3 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        .project-card p {
+            margin: 1rem 0;
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .contact-info a {
+            color: skyblue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: skyblue;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fortune Ifeanyi Daberechi</h1>
+        <p>Machine Learning Enthusiast & Web Developer</p>
+    </header>
+    <div class="container">
+        <div class="section" id="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Fortunne Ifeanyi, a passionate professional with expertise in machine learning and web development. I enjoy creating innovative solutions and working on exciting projects.</p>
+        </div>
+        <div class="section" id="experience">
+            <h2>Experience</h2>
+            <p>Details about my professional experience will go here. This section can include information about your past job roles, responsibilities, and achievements.</p>
+        </div>
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Brief description of the project. This section can include what the project is about, the technologies used, and your role in it.</p>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Brief description of the project. This section can include what the project is about, the technologies used, and your role in it.</p>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+        <div class="section" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>You can reach me at: <a href="mailto:example@example.com">example@example.com</a></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Fortunne Ifeanyi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
