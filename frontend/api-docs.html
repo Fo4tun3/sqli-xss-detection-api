@@ -89,7 +89,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#getting-started">Getting Started</a></li>
             <li><a href="#endpoints">Endpoints</a></li>
-            <li><a href="#examples">Examples</a></li>
+            <!-- <li><a href="#examples">Examples</a></li> -->
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -102,20 +102,110 @@
     </section>
     <section id="getting-started">
         <h2>Getting Started</h2>
-        <p>To start using the API, follow these steps...</p>
+        <p>To start using the API, follow these steps...</p><br><br>
+        <p><strong>Using JavaScript Fetch</strong></p>
+        <pre><code>
+JavaScript code
+    fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: 'your input text' }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Prediction:', data.prediction);
+        console.log('Predicted Class:', data.predicted_class);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+        </pre></code>
+        <br>
+        <br>
+
+        <p><strong>Using Python to Make a POST Request</strong></p>
+<p>Step-by-Step Guide</p>
+<p>1. Install the requests Library: If you don't have the requests library installed, you can install it using pip.</p>
+<pre><code>
+bash code
+    pip install requests
+</pre></code>
+<p>2. Write the Python Script: Create a Python script to send a POST request to the /predict-sqli-xss endpoint with the input text.</p>
+<pre><code>
+python code
+    import requests
+    import json
+
+    # Define the API endpoint
+    url = 'http://your-api-url.com/predict-sqli-xss'
+
+    # Define the text input
+    data = {
+        'text': 'your input text'
+    }
+
+    # Set the headers
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    # Send the POST request
+    response = requests.post(url, headers=headers, data=json.dumps(data))
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        result = response.json()
+        print('Prediction:', result['prediction'])
+        print('Predicted Class:', result['predicted_class'])
+    else:
+        print('Error:', response.status_code, response.text)
+</pre></code>
+<br><br>
+
+        <p><strong>Using Postman</strong></p>
+        <p>1. Open Postman and create a new POST request.</p>
+        <p>2. Enter the URL: http://your-api-url.com/api/v1/predict/sqli-xss.</p>
+        <p>3. Go to the "Headers" tab and set Content-Type to application/json.</p>
+        <p>4. Go to the "Body" tab, select raw and enter the JSON data:</p>
+<pre><code>
+json code
+    {
+        "text": "your input text"
+    }
+</pre></code>
+        <p>5. Click Send to make the request.</p>
+        <br>
+        <p><strong>Example Response</strong></p>
+        <p>A successful request to the /predict endpoint will return a JSON response similar to the following:</p>
+
+<pre><code>
+json code
+    {
+        "prediction": {
+            "SQL Injection": 0.8814384341239929,
+            "Cross-Site Scripting (XSS)": 0.005745088681578636,
+            "Normal": 0.1128164678812027
+        },
+        "predicted_class": "SQL Injection"
+    }
+</pre></code>
+        <p>This response includes the probabilities for each class and the predicted class based on the input text.</p>
     </section>
     <section id="endpoints">
         <h2>Endpoints</h2>
-        <h4>/detect-sqli</h4>
-        <p>Detects SQLi vulnerabilities.</p>
+        <h4>/detect-sqli-xss</h4>
+        <p>Detects SQLi and XSS vulnerabilities.</p>
         <pre><code>
-{
-"method": "POST",
-"endpoint": "/detect-sqli-xss",
-"body": {
-"query": "SELECT * FROM users WHERE id = 1"
-}
-}
+    {
+    "method": "POST",
+    "endpoint": "/detect-sqli-xss",
+    "body": {
+                "query": "SELECT * FROM users WHERE id = 1"
+            }
+    }
         </code></pre>
         <!-- <h4>/detect-xss</h4>
         <p>Detects XSS vulnerabilities.</p>
@@ -129,10 +219,10 @@
 }
         </code></pre> -->
     </section>
-    <section id="examples">
+    <!-- <section id="examples">
         <h2>Examples</h2>
         <p>Here are some examples of how to use the API...</p>
-    </section>
+    </section> -->
     <section id="faq">
         <h2>FAQ</h2>
         <p>Frequently asked questions about the API...</p>
@@ -153,13 +243,13 @@
             <p style="font-weight: bold;">Q4: How do I use the /detect-sqli endpoint?</p>
             <p>A4: To use the /detect-sqli endpoint, send a POST request with the following JSON payload:</p>
             <pre><code>
-{
-"method": "POST",
-"endpoint": "/detect-sqli-xss",
-"body": {
-    "query": "SELECT * FROM users WHERE id = 1"
-}
-}
+    {
+    "method": "POST",
+    "endpoint": "/detect-sqli-xss",
+    "body": {
+        "query": "SELECT * FROM users WHERE id = 1"
+    }
+    }
             </code></pre>
             <p>The response will indicate whether the provided Payload is vulnerable to SQL injection or XSS attack.</p>
             <br>
