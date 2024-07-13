@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/style copy.css">
     
     <link rel="stylesheet" href="passcss/api.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
 
     <title>SQLi_XSS Detect</title>
     <style>
@@ -45,7 +46,10 @@
             padding-top: 18px;
         }
         
-  
+        pre {
+            border: 1px solid #ddd;
+            padding-top: -60px;
+        }
     </style>
 </head>
 <body style="background-color: white;">
@@ -104,14 +108,15 @@
         <h2>Getting Started</h2>
         <p>To start using the API, follow these steps...</p><br><br>
         <p><strong>Using JavaScript Fetch</strong></p>
-        <pre><code>
+        <pre><code class="language-javascript">
 JavaScript code
-    fetch('http://127.0.0.1:5000/predict', {
+
+    fetch('http://127.0.0.1:5000/predict-sqli-xss', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: 'your input text' }),
+        body: JSON.stringify({ query: 'your input text' }),
     })
     .then(response => response.json())
     .then(data => {
@@ -128,22 +133,24 @@ JavaScript code
         <p><strong>Using Python to Make a POST Request</strong></p>
 <p>Step-by-Step Guide</p>
 <p>1. Install the requests Library: If you don't have the requests library installed, you can install it using pip.</p>
-<pre><code>
+<pre><code class="language-bash">
 bash code
+
     pip install requests
 </pre></code>
 <p>2. Write the Python Script: Create a Python script to send a POST request to the /predict-sqli-xss endpoint with the input text.</p>
-<pre><code>
+<pre><code class="language-python">
 python code
+
     import requests
     import json
 
     # Define the API endpoint
-    url = 'http://your-api-url.com/predict-sqli-xss'
+    url = 'http://your-api-url.com/api/v1/predict-sqli-xss'
 
     # Define the text input
     data = {
-        'text': 'your input text'
+        'query': 'your input text'
     }
 
     # Set the headers
@@ -167,13 +174,14 @@ python code
 
         <p><strong>Using Postman</strong></p>
         <p>1. Open Postman and create a new POST request.</p>
-        <p>2. Enter the URL: http://your-api-url.com/api/v1/predict/sqli-xss.</p>
+        <p>2. Enter the URL: http://your-api-url.com/api/v1/predict-sqli-xss.</p>
         <p>3. Go to the "Headers" tab and set Content-Type to application/json.</p>
         <p>4. Go to the "Body" tab, select raw and enter the JSON data:</p>
-<pre><code>
+<pre><code class="language-json">
 json code
+
     {
-        "text": "your input text"
+        "query": "your input text"
     }
 </pre></code>
         <p>5. Click Send to make the request.</p>
@@ -181,8 +189,9 @@ json code
         <p><strong>Example Response</strong></p>
         <p>A successful request to the /predict endpoint will return a JSON response similar to the following:</p>
 
-<pre><code>
+<pre><code class="language-json">
 json code
+
     {
         "prediction": {
             "SQL Injection": 0.8814384341239929,
@@ -198,10 +207,10 @@ json code
         <h2>Endpoints</h2>
         <h4>/detect-sqli-xss</h4>
         <p>Detects SQLi and XSS vulnerabilities.</p>
-        <pre><code>
+        <pre><code class="language-json">
     {
     "method": "POST",
-    "endpoint": "/detect-sqli-xss",
+    "endpoint": "/api/v1/predict-sqli-xss",
     "body": {
                 "query": "SELECT * FROM users WHERE id = 1"
             }
@@ -242,10 +251,10 @@ json code
 
             <p style="font-weight: bold;">Q4: How do I use the /detect-sqli endpoint?</p>
             <p>A4: To use the /detect-sqli endpoint, send a POST request with the following JSON payload:</p>
-            <pre><code>
+            <pre><code class="language-json">
     {
     "method": "POST",
-    "endpoint": "/detect-sqli-xss",
+    "endpoint": "/api/v1/predict-sqli-xss",
     "body": {
         "query": "SELECT * FROM users WHERE id = 1"
     }
@@ -425,6 +434,12 @@ json code
 <script src="js/bootstrap.min.js"></script>
 <!-- owl carousel js-->
 <script src="owl-carousel/owl.carousel.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
 <script src="js/main.js"></script>
 <script src="myjs/func.js"></script>
 </body>
