@@ -168,13 +168,15 @@
     <div>
         <div class = "review">
         <h2>SQL INJECTION AND CROSS-SITE SCRIPTING DETECTION USING MACHINE LEARNING</h2>
-        <form action="/predict" method="POST" target="_blank">
-           <textarea name="query" placeholder="Enter your query here..." rows="7" cols="15"></textarea>
+        <!-- <form action="/predict" method="POST" target="_blank" id="detectionForm"> -->
+        <form id="detectionForm">
+           <textarea name="query" placeholder="Enter your queryor payload here..." rows="7" cols="15" id="inputText"></textarea>
               <input type="submit" value="Submit">
             </form>
-            <div class="results">
-                <h2>Result</h2>
-                <h3>The provided query is not a malicious attack Payload</h3>
+            <div class="results" ></div>
+            <div class="results" id="result">
+                <h2>Prediction Result</h2>
+                <h3>Please type in your Payload. There's no result to see here yet!!!</h3>
             </div>
         </div>
     </div>
@@ -241,7 +243,8 @@
     <!-- owl carousel js-->
     <script src="owl-carousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-<script src="myjs/func.js"></script>
+    <script src="myjs/func.js"></script>
+    <script src="myjs/search-api.js"></script>
 
 </body>
 </html>
