@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load your model 
-model = load_model('sqli_xss_detection_model.h5')
+model = load_model('sqli_xss_detection_model_new.h5')
 
 # Define the alphabet and symbol set
 alphabet = " abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
