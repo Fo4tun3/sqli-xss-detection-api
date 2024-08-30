@@ -72,6 +72,10 @@
           cursor: pointer;
           align:center;
         }
+        input[type=submit]:hover {
+          background-color: #008080;
+            
+        }
 
         footer {
             margin-top: 50px;
@@ -221,7 +225,7 @@
         <form id="detectionForm">
             <!-- <h4>Enter you query</h4> -->
            <textarea name="query" placeholder="Enter your query or payload here..." rows="2" cols="10" id="inputText"></textarea><br>
-              <input type="submit" value="Submit">
+              <input class="submit" type="submit" value="Submit">
             </form>
             <div class="results" id="result">
                 <h2>Prediction Result</h2>
