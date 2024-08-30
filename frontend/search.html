@@ -36,7 +36,7 @@
           color: #f2f2f2;
           text-align: center;
           vertical-align: middle;
-          line-height: 40px; 
+          line-height: 50px; 
           padding: 15px;
         }
         
@@ -52,7 +52,7 @@
         
         textarea {
           
-          width: 85%;
+          width: 63%;
           padding: 12px 20px;
           margin: 8px 0;
           display: inline-block;
@@ -77,17 +77,36 @@
             margin-top: 50px;
         }
         .results {
-            margin-top: 30px;
+          width: 63%;
+          margin-top: 30px;
+          background-color: white;
+          padding: 20px 30px;
+          margin: 20px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
         }
         .results > h2 {
             float: center;
             display: block;
-            background-color: #ddd;
+            background-color: #fff;
             color: #0a1d7c;
             text-align: center;
             line-height: 20px; 
-            padding: 10px ;
-            margin: 10px 500px;
+            padding: 10px 0 15px;
+            margin: 0 0 10px 0;
+        }
+        .results > h4 {
+            font-size: 21px;
+            padding: 15px;
+        }
+        .new_predict_result {
+            display: flex;
+            justify-content: space-between;
+        }
+        .resultInput {
+            padding: 8px 0 8px 10px;
         }
         .userMessage {
             padding: 0 10px;
@@ -112,6 +131,13 @@
                 margin-top: 30px;
                 text-align: center;
                 margin: 40px 0;
+                background-color: white;
+          padding: 20px 20px;
+          margin: 20px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
             }
             .results h2 {
                 float: center;
@@ -167,16 +193,29 @@
 
     <div>
         <div class = "review">
-        <h2>SQL INJECTION AND CROSS-SITE SCRIPTING DETECTION USING MACHINE LEARNING</h2>
+        <h2>SQL INJECTION AND XSS DETECTION USING MACHINE LEARNING</h2>
         <!-- <form action="/predict" method="POST" target="_blank" id="detectionForm"> -->
         <form id="detectionForm">
-           <textarea name="query" placeholder="Enter your queryor payload here..." rows="7" cols="15" id="inputText"></textarea>
+            <!-- <h4>Enter you query</h4> -->
+           <textarea name="query" placeholder="Enter your query or payload here..." rows="2" cols="10" id="inputText"></textarea><br>
               <input type="submit" value="Submit">
             </form>
-            <div class="results" ></div>
             <div class="results" id="result">
                 <h2>Prediction Result</h2>
-                <h3>Please type in your Payload. There's no result to see here yet!!!</h3>
+                <h4>Please type in your Payload. There's no result to see here yet!!!</h4>
+                
+                <div class="new_predict_result">
+                    <div>
+                        <label for="predicted_class" style="font-weight: bold;">Predicted Class:
+                            <input class="resultInput" type="text" disabled value="No Result">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="predicted_percentage" style="font-weight: bold;">Prediction Percent:
+                            <input class="resultInput" type="text" disabled value="No Result">
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
