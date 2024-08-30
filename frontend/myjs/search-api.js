@@ -21,7 +21,7 @@ document.getElementById('detectionForm').addEventListener('submit', function(eve
     event.preventDefault();
     const inputText = document.getElementById('inputText').value;
     
-    fetch('http://127.0.0.1:8080/api/v1/predict-sqli-xss', {
+    fetch('https://sqli-xss-attack-detection-api.onrender.com/api/v1/predict-sqli-xss', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
