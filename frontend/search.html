@@ -127,7 +127,19 @@
             input[type=submit] {
                 width: 30%;
             }
+            textarea {
+          
+                width: 80%;
+                height: 100px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
             .results {
+              width: 80%;
                 margin-top: 30px;
                 text-align: center;
                 margin: 40px 0;
@@ -144,11 +156,22 @@
                 display: block;
                 color: #0a1d7c;
                 text-align: center;
-                line-height: 20px; 
+                line-height: 40px; 
                 padding: 10px ;
                 margin: 10px 0px;
             }
-
+            .new_predict_result {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .resultInput {
+                padding: 8px 0 8px 10px;
+                width: 100%;
+            }
+            .predict_container {
+                padding: 15px 0;
+            }
             .navbar-brand {
                 /* border: 1px solid red; */
                 padding: 0 0 0 20px;
@@ -205,12 +228,12 @@
                 <h4>Please type in your Payload. There's no result to see here yet!!!</h4>
                 
                 <div class="new_predict_result">
-                    <div>
+                    <div class="predict_container">
                         <label for="predicted_class" style="font-weight: bold;">Predicted Class:
                             <input class="resultInput" type="text" disabled value="No Result">
                         </label>
                     </div>
-                    <div>
+                    <div class="predict_container">
                         <label for="predicted_percentage" style="font-weight: bold;">Prediction Percent:
                             <input class="resultInput" type="text" disabled value="No Result">
                         </label>

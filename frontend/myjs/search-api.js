@@ -21,7 +21,8 @@ document.getElementById('detectionForm').addEventListener('submit', function(eve
     event.preventDefault();
     const inputText = document.getElementById('inputText').value;
     
-    fetch('https://sqli-xss-attack-detection-api.onrender.com/api/v1/predict-sqli-xss', {
+    // fetch('https://sqli-xss-attack-detection-api.onrender.com/api/v1/predict-sqli-xss', {
+    fetch('http://127.0.0.1:8080/api/v1/predict-sqli-xss', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -48,12 +49,12 @@ document.getElementById('detectionForm').addEventListener('submit', function(eve
             <h2>Prediction Result</h2>
 
             <div class="new_predict_result">
-                <div>
+                <div class="predict_container">
                     <label for="predicted_class" style="font-weight: bold;">Predicted Class:
                         <input id= "resultInput" class="resultInput" type="text" disabled value="${data.predicted_class}">
                     </label>
                 </div>
-                <div>
+                <div class="predict_container">
                     <label for="predicted_percentage" style="font-weight: bold;">Prediction Percent:
                         <input id= "resultInput" class="resultInput" type="text" disabled value="${predictedPercent}">
                     </label>
